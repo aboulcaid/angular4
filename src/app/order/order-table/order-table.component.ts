@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { OrderRow } from '../order-row.model';
+import { OrderRow } from '../order-row.model';;
+import {Utils} from '../utils'
+
 
 @Component({
   selector: 'app-order-table',
@@ -16,4 +18,9 @@ export class OrderTableComponent implements OnInit {
     
   }
 
+  totalTtc(){
+    return this.rows && this.rows
+    .map(row => row.ttc())
+    .reduce(Utils.total,0);
+  }
 }
