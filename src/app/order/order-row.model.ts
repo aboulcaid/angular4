@@ -5,14 +5,15 @@ constructor (
     public price?:number,
     public quantity?:number
 ){
-  // ht(){
- //      return this.price * this.quantity;
-  // }
-  // ttc(){
-  //     return this.ht() * 1.055;
-  // }
+  
 
   
 }
 
+ht(){
+  return this.price * this.quantity;
+}
+ttc(){
+   return this.ht() * 1.055;
+}
 }
